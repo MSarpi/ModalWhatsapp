@@ -1,6 +1,6 @@
 {
   "name": "modalwhatsapp-reactjs",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "ModalWhatsapp-ReactJs is a component designed to facilitate the creation of URLs that redirect to the WhatsApp API. You just need to fill in the necessary fields, and it will do all the work for you.",
   "main": "./ModalWhatsapp.jsx",
   "scripts": {

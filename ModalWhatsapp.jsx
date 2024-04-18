@@ -2,7 +2,7 @@ import { useState } from 'react';
 import img from './fondo.jpg'
 import './styleModalWhatsapp.css'
 
-export default function WhatsappModal({btnText, btnBackground, btnColorText, empresa, colorEmpresa, celular, mensaje, btnRespuesta, textEnlace, sizeY, sizeX, bgColorTop, bgColorBottom }) {
+export default function WhatsappModal({btnText, btnBackground, btnColorText, sizeY, sizeX, bgColorTop, bgColorBottom, btnResponse, business, businessColor, message, phone,  textLink }) {
 
     const [modalWhatsappOn, setModalWhatsappOn] = useState(false);
 
@@ -10,9 +10,9 @@ export default function WhatsappModal({btnText, btnBackground, btnColorText, emp
       setModalWhatsappOn(!modalWhatsappOn);
     };
 
-    if (textEnlace) {
+    if (textLink) {
         // Si hay un texto definido, reemplazar espacios por %20
-        textEnlace = textEnlace.replace(/ /g, "%20"); 
+        textLink = textLink.replace(/ /g, "%20"); 
     }
   return (
     <>
@@ -31,7 +31,7 @@ export default function WhatsappModal({btnText, btnBackground, btnColorText, emp
                             </svg>
                             <strong style={{ color: "white" }}>What'sApp</strong>
                             <br/>
-                            <small style={{  color: colorEmpresa }}>{empresa}</small>
+                            <small style={{  color: businessColor }}>{business}</small>
                         </div>
                         <button type="button" className="btn-close-whatsapp" data-bs-dismiss="toast" aria-label="Close" onClick={handleModalToggle}>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -42,13 +42,13 @@ export default function WhatsappModal({btnText, btnBackground, btnColorText, emp
                     
                         <div className="toast-body" style={{ height: sizeY }}>
                         <div className='text-ws-hea'>
-                        <p className='modal-text-box-creaciones-navarro' style={{  color: "#000" }}>{mensaje}</p>
+                        <p className='modal-text-box-creaciones-navarro' style={{  color: "#000" }}>{message}</p>
                         </div>
                             
                         </div>
                    
 
-                    <div className="modal-btn-creaciones-navarro" style={{ backgroundColor: bgColorBottom }}><a href={`https://api.whatsapp.com/send?phone=${celular}&text=${textEnlace}` } target="_blank"><button type="button" className="btn-api-whatsapp">{btnRespuesta}</button></a></div>
+                    <div className="modal-btn-creaciones-navarro" style={{ backgroundColor: bgColorBottom }}><a href={`https://api.whatsapp.com/send?phone=${phone}&text=${textLink}` } target="_blank"><button type="button" className="btn-api-whatsapp">{btnResponse}</button></a></div>
                 </div>
             </div>
         </div>
