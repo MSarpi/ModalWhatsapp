@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import img from './fondo.jpg'
-import './styleModalWhatsapp.css'
+import img from './asset/fondo.jpg'
+import './asset/styleModalWhatsapp.css'
 
 export default function WhatsappModal({btnText, btnBackground, btnColorText, sizeY, sizeX, bgColorTop, bgColorBottom, btnResponse, business, businessColor, message, phone,  textLink }) {
 
@@ -40,7 +40,7 @@ export default function WhatsappModal({btnText, btnBackground, btnColorText, siz
                         </button>
                     </div>
                     
-                        <div className="toast-body" style={{ height: sizeY }}>
+                        <div className="toast-body" style={{ height: sizeY, backgroundImage: img }}>
                         <div className='text-ws-hea'>
                         <p className='modal-text-box-creaciones-navarro' style={{  color: "#000" }}>{message}</p>
                         </div>
